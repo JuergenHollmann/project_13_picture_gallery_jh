@@ -4,6 +4,8 @@ void main() {
   runApp(const MainApp());
 }
 
+const primeColor = Color.fromRGBO(200, 210, 255, 1); // hellblau
+
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
@@ -11,7 +13,10 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       home: Scaffold(
-        body: Center(
+        // den gesamten Hintergrund einfärben:
+        backgroundColor: primeColor,
+        //appBar: AppBar(title: Text("Picture Gallery")),
+        body: SafeArea(
           child: Text('Hello World!'),
         ),
       ),
