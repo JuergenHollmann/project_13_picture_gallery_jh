@@ -5,7 +5,7 @@ class GalleryData extends StatelessWidget {
   final String imageDate;
   final String imageDescription;
   final String imagePath;
-  
+
   GalleryData(
       {required this.imageTitle,
       required this.imageDate,
@@ -13,7 +13,7 @@ class GalleryData extends StatelessWidget {
       required this.imagePath,
       super.key});
 
-  final List<GalleryData> galleryData = [
+  final List<GalleryData> galleryDataList = [
     GalleryData(
       imageTitle: 'Bunter Basketball',
       imageDate: '03.06.2023',

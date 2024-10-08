@@ -1,8 +1,9 @@
+//import 'dart:developer';
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:project_13_picture_gallery_jh/features/gallery/screens/favorites.dart';
 import 'package:project_13_picture_gallery_jh/features/gallery/screens/start_page.dart';
-import 'package:project_13_picture_gallery_jh/features/profile/profile.dart';
+import 'package:project_13_picture_gallery_jh/features/profile/my_profile.dart';
 
 void main() {
   runApp(const MainApp());
@@ -20,7 +21,8 @@ class MainApp extends StatefulWidget {
 class _MainAppState extends State<MainApp> {
   final List<Widget> widgets = [
     const StartPage(),
-    const Favorites(),
+    const Favorites(image: Icon(Icons.stars_rounded)),
+    //const Favorites(),
     const MyProfile(),
   ];
 
@@ -29,26 +31,34 @@ class _MainAppState extends State<MainApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         // den gesamten Hintergrund einfärben:
         backgroundColor: primeColor,
+// ----------------------------------------------------------------------------------------------
+// AppBar
+// ----------------------------------------------------------------------------------------------
         appBar: AppBar(
-          title: const Text('Meine Bildergalerie'),
-          foregroundColor: Colors.white, // Schriftfarbe
+          title: const Text(
+            'Meine Bildergalerie',
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
           backgroundColor:
               const Color.fromARGB(255, 4, 85, 151), // dunkles Blau
-          shadowColor: Colors.black87, // Schattten unter der AppBar
+          shadowColor: Colors.black, // Schattten unter der AppBar
           elevation: 10, // Höhe des Schattens unter der AppBar
         ),
 // ----------------------------------------------------------------------------------------------
 // Standard NavigationBar
-// ---------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------
         bottomNavigationBar: NavigationBar(
-          backgroundColor:
-              Colors.amber, //const Color.fromARGB(255, 4, 85, 151),
+          backgroundColor: Colors.white,
           indicatorColor: Colors.blue,
           selectedIndex: currentIndex,
-          onDestinationSelected: (int index) {
+          onDestinationSelected: (index) {
             log("Button $index geklickt");
             currentIndex = index;
             setState(() {});
@@ -57,17 +67,14 @@ class _MainAppState extends State<MainApp> {
             NavigationDestination(
               icon: Icon(Icons.image_rounded),
               label: "Alle Bilder",
-              // enabled: true,
             ),
             NavigationDestination(
               icon: Icon(Icons.stars_rounded),
               label: "Favoriten",
-              //enabled: true,
             ),
             NavigationDestination(
               icon: Icon(Icons.person),
               label: "Über mich",
-              // selectedIcon: Colors.black, // funzt nicht
             ),
           ],
         ),
@@ -77,3 +84,20 @@ class _MainAppState extends State<MainApp> {
     );
   }
 }
+// ----------------------------------------------------------------------------------------------
+// class MainApp extends StatelessWidget {
+//   const MainApp({super.key});
+
+//   // This widget is the root of your application.
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       home: const StartPage(),
+//       routes: {
+//         '/my_bottom_navigation_bar': (context) => const MyBottomNavigationBar(),
+//       },
+//     );
+//   }
+// }
+// ----------------------------------------------------------------------------------------------
