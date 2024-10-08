@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:project_13_picture_gallery_jh/features/gallery/repository/gallery_data.dart';
-//import 'package:project_13_picture_gallery_jh/features/gallery/screens/favorites.dart';
 
 class StartPage extends StatefulWidget {
   const StartPage({super.key});

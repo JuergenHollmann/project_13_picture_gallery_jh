@@ -1,4 +1,3 @@
-//import 'dart:developer';
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:project_13_picture_gallery_jh/features/gallery/screens/favorites.dart';
