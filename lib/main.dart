@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:project_13_picture_gallery_jh/features/gallery/screens/favorites.dart';
 import 'package:project_13_picture_gallery_jh/features/gallery/screens/start_page.dart';
 import 'package:project_13_picture_gallery_jh/features/profile/my_profile.dart';
+import 'package:project_13_picture_gallery_jh/features/gallery/repository/gallery_data.dart';
+
 
 void main() {
   runApp(const MainApp());
@@ -19,7 +21,7 @@ class MainApp extends StatefulWidget {
 
 class _MainAppState extends State<MainApp> {
   final List<Widget> screens = [
-    const StartPage(),
+      StartPage(galleryItem: GalleryItem(imageTitle: "imageTitle", imageDate: "imageDate", imageDescription: "imageDescription", imagePath: "imagePath"),),
     const Favorites(image: Icon(Icons.stars_rounded)),
     const MyProfile(),
   ];
@@ -85,6 +87,8 @@ class _MainAppState extends State<MainApp> {
 // ----------------------------------------------------------------------------------------------
 // class MainApp extends StatelessWidget {
 //   const MainApp({super.key});
+
+//   // This widget is the root of your application.
 //   @override
 //   Widget build(BuildContext context) {
 //     return MaterialApp(
