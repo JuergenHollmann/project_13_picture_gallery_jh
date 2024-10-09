@@ -11,7 +11,7 @@ class Favorites extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 235, 182, 210),
         title: const Text(
-          "Meine Favoriten-Bilder",
+          "Meine Favoriten-Bilder \n--> (coming soon!) <--",
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
       ),
