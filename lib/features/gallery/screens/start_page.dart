@@ -3,9 +3,11 @@
 // ----------------------------------------------------------------------------------------------
 import 'package:flutter/material.dart';
 import 'package:project_13_picture_gallery_jh/features/gallery/repository/gallery_data.dart';
+import 'package:project_13_picture_gallery_jh/features/gallery/screens/detail_page.dart';
 
 class StartPage extends StatelessWidget {
-  const StartPage({super.key});
+  const StartPage({super.key, required this.galleryItem});
+  final GalleryItem galleryItem;
 
   @override
   Widget build(BuildContext context) {
@@ -19,22 +21,31 @@ class StartPage extends StatelessWidget {
         ),
         itemCount: galleryData.length,
         itemBuilder: (context, index) {
-          final item = galleryData[index];
-          return Card(
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: SizedBox(
-                    width: 155,
-                    height: 155,
-                    child: Image.asset(item.imagePath, fit: BoxFit.cover),
+          final GalleryItem item = galleryData[index];
+          //final item = galleryData[index];
+
+          return GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) =>
+                      DetailPage(galleryItem: galleryItem, item: item)));
+            },
+            child: Card(
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: SizedBox(
+                      width: 155,
+                      height: 155,
+                      child: Image.asset(item.imagePath, fit: BoxFit.cover),
+                    ),
                   ),
-                ),
-                // ignore: unnecessary_string_interpolations
-                Text("${item.imageTitle}",
-                    style: const TextStyle(fontWeight: FontWeight.bold)),
-              ],
+                  // ignore: unnecessary_string_interpolations
+                  Text("${item.imageTitle}",
+                      style: const TextStyle(fontWeight: FontWeight.bold)),
+                ],
+              ),
             ),
           );
         },
