@@ -1,66 +1,96 @@
+// ----------------------------------------------------------------------------------------------
+// GridView mit Card
+// ----------------------------------------------------------------------------------------------
 import 'package:flutter/material.dart';
 import 'package:project_13_picture_gallery_jh/features/gallery/repository/gallery_data.dart';
 
-class StartPage extends StatefulWidget {
+class StartPage extends StatelessWidget {
   const StartPage({super.key});
 
   @override
-  // ignore: no_logic_in_create_state
-  State<StartPage> createState() => _StartPageState(galleryDataList: []);
-}
-
-class _StartPageState extends State<StartPage> {
-
-  final List<GalleryData> galleryDataList;
-
-  _StartPageState({required this.galleryDataList});
-
-  @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        crossAxisSpacing: 10,
-        mainAxisSpacing: 10,
-      ),
-      //itemCount: galleryDataList.length, //7, // eigentlich: galleryData.length,
-      itemCount: galleryDataList.length,
-      itemBuilder: (context, index) {
-        final item = galleryDataList[index]; // eigentlich: galleryData[index];
-        return GestureDetector(
-          onTap: () {
-
-
-
-            // Navigator.push(
-            //   context,
-            //   MaterialPageRoute(
-
-
-Navigator.pushNamed(context, '/my_bottom_navigation_bar');
-
-
-
-
-
-            //builder: (context) => ImageDetailPage(image: item), // original
-
-
-            // builder: (context) => Favorites(image: item),
-              // ),
-            // );
-          },
-          child: Card(
+    return Padding(
+      padding: const EdgeInsets.all(10),
+      child: GridView.builder(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 15,
+          mainAxisSpacing: 15,
+        ),
+        itemCount: galleryData.length,
+        itemBuilder: (context, index) {
+          final item = galleryData[index];
+          return Card(
             child: Column(
               children: [
-                Image.asset(item.imagePath),
-                Text(item.imageTitle),
-                Text(item.imageDate),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: SizedBox(
+                    width: 155,
+                    height: 155,
+                    child: Image.asset(item.imagePath, fit: BoxFit.cover),
+                  ),
+                ),
+                // ignore: unnecessary_string_interpolations
+                Text("${item.imageTitle}",
+                    style: const TextStyle(fontWeight: FontWeight.bold)),
               ],
             ),
-          ),
-        );
-      },
+          );
+        },
+      ),
     );
   }
 }
+// ----------------------------------------------------------------------------------------------
+// --> Diese Codes werden hier gespeichert, um einfache Tests für die GridView zu machen.
+// ----------------------------------------------------------------------------------------------
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: SafeArea(
+//         child: Padding(
+//           padding: const EdgeInsets.all(20),
+//           child: GridView.count(
+//             crossAxisCount: 2,
+//             crossAxisSpacing: 20,
+//             mainAxisSpacing: 20,
+//             itemCount: 4,
+// ----------------------------------------------------------------------------------------------
+// ... mit 4 Containern in 4 Farben zum einfachen Testen:
+// ----------------------------------------------------------------------------------------------
+//             children: [
+//               Container(
+//                 height: 200,
+//                 width: 200,
+//                 color: Colors.blue,
+//               ),
+//               Container(
+//                 height: 200,
+//                 width: 200,
+//                 color: Colors.red,
+//               ),
+//               Container(
+//                 height: 200,
+//                 width: 200,
+//                 color: Colors.amber,
+//               ),
+//               Container(
+//                 height: 200,
+//                 width: 200,
+//                 color: Colors.green,
+//               ),
+// ----------------------------------------------------------------------------------------------
+// ... mit einer generierten Liste (wo man die Anzahl variabel zum Testen eingeben kann: 
+// ----------------------------------------------------------------------------------------------
+//               // children: List.generate(
+//               //   16,
+//               //   (index) => Container(
+//               //     color: Colors.blue,
+//               //     child: Center(
+//               //       child: Text("Item $index"),
+//               //     ),
+//               //   ),
+//               // ),
+//             ],
+// ----------------------------------------------------------------------------------------------

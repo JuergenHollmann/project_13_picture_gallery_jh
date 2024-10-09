@@ -53,31 +53,6 @@ class _MyBottomNavigationBar extends State<MyBottomNavigationBar> {
         ],
       ),
 // ----------------------------------------------------------------------------------------------
-
-      //   bottomNavigationBar: NavigationBar(
-      //     backgroundColor: const Color.fromARGB(255, 112, 146, 170),
-      //     indicatorColor: const Color.fromARGB(182, 136, 214, 253),
-      //     selectedIndex: currentIndex,
-      //     onDestinationSelected: (index) {
-      //       currentIndex = index;
-      //       setState(() {});
-      //     },
-      //     destinations: const [
-      //       NavigationDestination(
-      //           icon: Icon(
-      //             Icons.home,
-      //             color: Colors.white,
-      //           ),
-      //           label: "Gallery"),
-      //       NavigationDestination(
-      //           icon: Icon(
-      //             Icons.person_3,
-      //             color: Colors.white,
-      //           ),
-      //           label: "About me"),
-      //     ],
-      //   ),
-
       body: widgets[currentIndex],
     );
   }

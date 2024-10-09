@@ -4,7 +4,7 @@ const primeColor = Color.fromRGBO(200, 210, 255, 1); // hellblau
 
 class MyProfile extends StatelessWidget {
   const MyProfile({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

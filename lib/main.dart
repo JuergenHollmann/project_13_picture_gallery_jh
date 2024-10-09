@@ -18,10 +18,9 @@ class MainApp extends StatefulWidget {
 }
 
 class _MainAppState extends State<MainApp> {
-  final List<Widget> widgets = [
+  final List<Widget> screens = [
     const StartPage(),
     const Favorites(image: Icon(Icons.stars_rounded)),
-    //const Favorites(),
     const MyProfile(),
   ];
 
@@ -54,7 +53,7 @@ class _MainAppState extends State<MainApp> {
 // Standard NavigationBar
 // ----------------------------------------------------------------------------------------------
         bottomNavigationBar: NavigationBar(
-          backgroundColor: Colors.white,
+          backgroundColor: const Color.fromARGB(255, 252, 255, 203),
           indicatorColor: Colors.blue,
           selectedIndex: currentIndex,
           onDestinationSelected: (index) {
@@ -78,7 +77,7 @@ class _MainAppState extends State<MainApp> {
           ],
         ),
 // ----------------------------------------------------------------------------------------------
-        body: widgets[currentIndex],
+        body: screens[currentIndex],
       ),
     );
   }
@@ -86,8 +85,6 @@ class _MainAppState extends State<MainApp> {
 // ----------------------------------------------------------------------------------------------
 // class MainApp extends StatelessWidget {
 //   const MainApp({super.key});
-
-//   // This widget is the root of your application.
 //   @override
 //   Widget build(BuildContext context) {
 //     return MaterialApp(
