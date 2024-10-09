@@ -5,7 +5,6 @@ import 'package:project_13_picture_gallery_jh/features/gallery/screens/start_pag
 import 'package:project_13_picture_gallery_jh/features/profile/my_profile.dart';
 import 'package:project_13_picture_gallery_jh/features/gallery/repository/gallery_data.dart';
 
-
 void main() {
   runApp(const MainApp());
 }
@@ -21,7 +20,13 @@ class MainApp extends StatefulWidget {
 
 class _MainAppState extends State<MainApp> {
   final List<Widget> screens = [
-      StartPage(galleryItem: GalleryItem(imageTitle: "imageTitle", imageDate: "imageDate", imageDescription: "imageDescription", imagePath: "imagePath"),),
+    StartPage(
+      galleryItem: GalleryItem(
+          imageTitle: "imageTitle",
+          imageDate: "imageDate",
+          imageDescription: "imageDescription",
+          imagePath: "imagePath"),
+    ),
     const Favorites(image: Icon(Icons.stars_rounded)),
     const MyProfile(),
   ];
@@ -55,7 +60,8 @@ class _MainAppState extends State<MainApp> {
 // Standard NavigationBar
 // ----------------------------------------------------------------------------------------------
         bottomNavigationBar: NavigationBar(
-          backgroundColor: const Color.fromARGB(255, 252, 255, 203),
+          backgroundColor: const Color.fromARGB(
+              255, 235, 182, 210), //const Color.fromARGB(255, 252, 255, 203),
           indicatorColor: Colors.blue,
           selectedIndex: currentIndex,
           onDestinationSelected: (index) {
