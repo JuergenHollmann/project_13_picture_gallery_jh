@@ -62,10 +62,10 @@ List<GalleryItem> galleryData = [
     imagePath: 'assets/images/tennis_2.jpeg',
   ),
   GalleryItem(
-    imageTitle: 'Fußball-"Stars"',
-    imageDate: '03.06.2024',
+    imageTitle: 'Fußball-"Star"',
+    imageDate: '10.10.2024',
     imageDescription:
-        "wetgzhdsff fghweAETG GHEzhj qawezhretje tgewujrkjhgaq weghrerhjerhg hwerjerwshgerjehe",
+        "Dieses Bild hat gefehlt ... Es handelt sich um einen Fußball mit einem Stern darauf. Dieser wurde noch nie eingesetzt, und deshalb ist er wenigstens auf dieser einen Seite zu sehen.",
     imagePath: 'assets/images/soccer.jpeg',
   ),
   GalleryItem(

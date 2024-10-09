@@ -16,8 +16,8 @@ class DetailPage extends StatelessWidget {
         backgroundColor: const Color.fromARGB(
             255, 235, 182, 210), //const Color.fromARGB(255, 235, 113, 178),
         title: const Text(
-          "Gallery Details",
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
+          "Details zum Bild",
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
       ),
       body: Padding(
@@ -26,7 +26,10 @@ class DetailPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.asset(item.imagePath),
+              Image.asset(
+                item.imagePath,
+                fit: BoxFit.fill,
+              ),
               const SizedBox(
                 height: 30,
               ),

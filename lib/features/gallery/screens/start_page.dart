@@ -38,7 +38,7 @@ class StartPage extends StatelessWidget {
                     child: SizedBox(
                       width: 155,
                       height: 155,
-                      child: Image.asset(item.imagePath, fit: BoxFit.cover),
+                      child: Image.asset(item.imagePath, fit: BoxFit.fill),
                     ),
                   ),
                   // ignore: unnecessary_string_interpolations
