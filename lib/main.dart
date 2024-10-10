@@ -1,6 +1,6 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:project_13_picture_gallery_jh/features/gallery/screens/favorites.dart';
+import 'package:project_13_picture_gallery_jh/features/gallery/screens/favorites_screen.dart';
 import 'package:project_13_picture_gallery_jh/features/gallery/screens/start_page.dart';
 import 'package:project_13_picture_gallery_jh/features/profile/my_profile.dart';
 import 'package:project_13_picture_gallery_jh/features/gallery/repository/gallery_data.dart';

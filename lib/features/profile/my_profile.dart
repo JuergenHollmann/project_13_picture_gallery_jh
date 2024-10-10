@@ -25,7 +25,7 @@ class MyProfile extends StatelessWidget {
           ),
           backgroundColor:
               const Color.fromARGB(255, 4, 85, 151), // dunkles Blau
-          shadowColor: Colors.black, // Schattten unter der AppBar
+          shadowColor: Colors.blue, // Schattten unter der AppBar
           elevation: 10, // Höhe des Schattens unter der AppBar
         ),
 // ----------------------------------------------------------------------------------------------
