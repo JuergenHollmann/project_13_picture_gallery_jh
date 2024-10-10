@@ -1,4 +1,5 @@
 import 'dart:developer';
+//import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:project_13_picture_gallery_jh/features/gallery/screens/favorites_screen.dart';
 import 'package:project_13_picture_gallery_jh/features/gallery/screens/start_page.dart';
@@ -60,8 +61,12 @@ class _MainAppState extends State<MainApp> {
 // Standard NavigationBar
 // ----------------------------------------------------------------------------------------------
         bottomNavigationBar: NavigationBar(
-          backgroundColor: const Color.fromARGB(
-              255, 235, 182, 210), //const Color.fromARGB(255, 252, 255, 203),
+          backgroundColor: const Color.fromARGB(255, 235, 182, 210),
+          // const Color.fromARGB(255, 252, 255, 203),
+
+          //  LinearGradient(begin: Alignment.centerLeft, colors: Colors.accents),
+          //  Gradient.linear(color: Colors.blue, 1, color: Colors.red),
+
           indicatorColor: Colors.blue,
           selectedIndex: currentIndex,
           onDestinationSelected: (index) {
