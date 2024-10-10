@@ -6,7 +6,5 @@ Es wurde eine Bildergalerie mit vorgegebenen Bildern und Beschreibungstext inner
 Bei der Farbgestaltung und der Aufteilung gab es eigenen Gestaltungsspielraum.
 #
 ![Alle Bilder zeigen](<Bildergalerie 1 - Alle Bilder zeigen.png>)
-#
 ![Details zu einem Einzelbild](<Bildergalerie 2 - Details zum Bild.png>)
-#
 ![Profil nach Vorgabe](<Bildergalerie 3 - Mein Profil.png>)
